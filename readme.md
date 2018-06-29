@@ -1,3 +1,44 @@
+## Development
+
+```
+$ git clone
+
+$ cd lumen/dev
+$ vagrant up --provision
+```
+
+When the virtual machine is up successfully, access to http://localhost:8080.
+
+### About vboxsf error
+
+```
+local$ vagrant ssh
+lumen$ sudo yum update -y kernel
+lumen$ sudo yum install -y kernel-devel kernel-headers gcc gcc-c++
+lumen$ exit
+local$ vagrant reload --provision
+
+
+## SSHing to web server.
+
+```
+local$ cd dev
+local$ vagrant ssh
+lumen$ docker exec -it lumen-php /bin/bash
+```
+
+Source code is at /vagrant directory.
+
+
+## SSHing to mysql server.
+
+```
+local$ cd dev
+local$ vagrant ssh
+lumen$ docker exec -it lumen-mysql /bin/bash
+```
+
+
 # Lumen PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)

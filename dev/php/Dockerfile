@@ -7,7 +7,7 @@ RUN { \
 } > /usr/local/etc/php/php.ini
 
 RUN apt-get update \
-  && apt-get install -y git zlib1g-dev unzip libpng12-dev libfreetype6-dev libjpeg62-turbo-dev libicu-dev libxml2-dev \
+  && apt-get install -y git zlib1g-dev unzip libpng-dev libfreetype6-dev libjpeg62-turbo-dev libicu-dev libxml2-dev \
   && docker-php-ext-configure gd --with-freetype-dir=/usr/lib/x86_64-linux-gnu/ --with-jpeg-dir=/usr/lib/x86_64-linux-gnu/ \
   && docker-php-ext-install pdo_mysql mbstring zip gd intl xml
 
